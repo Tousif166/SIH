@@ -1,0 +1,67 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.badge-sm {
+  padding: 2px 8px;
+  font-size: var(--fs-xs);
+}
+
+.badge-md {
+  padding: 4px 12px;
+  font-size: var(--fs-sm);
+}
+
+.badge-lg {
+  padding: 6px 16px;
+  font-size: var(--fs-base);
+}
+
+/* Variants */
+.badge-default { background: var(--gray-100); color: var(--gray-700); }
+.badge-success { background: var(--success-50); color: var(--success-600); }
+.badge-warning { background: var(--warning-50); color: var(--warning-600); }
+.badge-danger { background: var(--danger-50); color: var(--danger-600); }
+.badge-info { background: var(--info-50); color: var(--info-600); }
+.badge-primary { background: var(--primary-50); color: var(--primary-700); }
+.badge-purple { background: #f3e8ff; color: #7c3aed; }
+
+.badge-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Fairness Badge — special styling */
+.fairness-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 14px;
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: #065f46;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.fairness-badge-icon {
+  font-size: 1rem;
+}
+
+/* Status-specific badges */
+.badge-en-route { background: #dbeafe; color: #1d4ed8; }
+.badge-in-progress { background: #fef3c7; color: #b45309; }
+.badge-completed { background: #d1fae5; color: #065f46; }
+.badge-cancelled { background: #fee2e2; color: #b91c1c; }
+.badge-assigned { background: #e0e7ff; color: #3730a3; }
+.badge-pending { background: #fef3c7; color: #b45309; }
+.badge-approved { background: #d1fae5; color: #065f46; }
+.badge-rejected { background: #fee2e2; color: #b91c1c; }
+.badge-open { background: #fee2e2; color: #b91c1c; }
+.badge-resolved { background: #d1fae5; color: #065f46; }

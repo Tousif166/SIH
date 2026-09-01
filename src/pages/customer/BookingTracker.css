@@ -1,0 +1,209 @@
+.tracker-page { max-width: 1000px; }
+
+.tracker-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tracker-header-row h1 {
+  margin: 0 0 4px;
+}
+
+.booking-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-200);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.booking-detail-header h3 {
+  margin: 0;
+}
+
+.tracker-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+
+.booking-list-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tracker-booking-card {
+  padding: var(--space-4);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.tracker-booking-card.selected {
+  border-color: var(--primary-500);
+  background: var(--primary-50);
+}
+
+.tracker-booking-card:hover {
+  border-color: var(--primary-200);
+}
+
+.tracker-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.tracker-card-top h4 { font-size: var(--fs-sm); }
+
+/* Worker Info */
+.worker-info-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  margin: var(--space-6) 0;
+}
+
+.worker-avatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  flex-shrink: 0;
+}
+
+.worker-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.worker-details h4 {
+  font-size: var(--fs-base);
+}
+
+.worker-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.contact-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-600);
+  background: var(--primary-50);
+  transition: all var(--transition-fast);
+}
+
+.contact-btn:hover {
+  background: var(--primary-100);
+  transform: scale(1.1);
+}
+
+.track-btn {
+  margin: var(--space-4) 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Detail Grid */
+.detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.detail-label {
+  font-size: var(--fs-sm);
+  color: var(--gray-500);
+}
+
+.detail-value {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  text-align: right;
+  max-width: 250px;
+}
+
+.detail-price {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--primary-700);
+}
+
+.weather-detail .detail-value {
+  color: var(--warning-600);
+}
+
+/* Rating Section */
+.rating-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--gray-100);
+  margin-top: var(--space-4);
+}
+
+/* Video Placeholder */
+.video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--gray-400);
+}
+
+.video-placeholder h3 { color: var(--gray-700); }
+.video-placeholder p { color: var(--gray-500); font-size: var(--fs-sm); }
+
+@media (max-width: 768px) {
+  .tracker-layout {
+    grid-template-columns: 1fr;
+  }
+  .booking-list-panel {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: var(--space-3);
+    padding-bottom: var(--space-2);
+  }
+  .tracker-booking-card {
+    min-width: 220px;
+    flex-shrink: 0;
+  }
+}

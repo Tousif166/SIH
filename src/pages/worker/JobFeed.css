@@ -1,0 +1,83 @@
+.job-feed-page { max-width: 750px; }
+.job-feed-page h1 { margin-bottom: var(--space-2); }
+
+.job-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.job-card { padding: var(--space-6); position: relative; overflow: hidden; }
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-3);
+}
+
+.job-card-header > div { display: flex; flex-direction: column; gap: var(--space-2); }
+.job-card-header h3 { font-size: var(--fs-lg); }
+
+.job-description {
+  font-size: var(--fs-sm);
+  color: var(--gray-600);
+  margin-bottom: var(--space-3);
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  color: var(--gray-500);
+  font-size: var(--fs-xs);
+  margin-bottom: var(--space-4);
+}
+
+.job-meta span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.job-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--gray-100);
+}
+
+.job-pay {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--success-600);
+}
+
+.job-actions { display: flex; gap: var(--space-2); }
+
+.job-accepted { opacity: 0.6; pointer-events: none; }
+
+.accepted-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 185, 129, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: white;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  animation: scaleIn 0.3s ease-out;
+  border-radius: var(--radius-lg);
+}
+
+.accept-modal-content { display: flex; flex-direction: column; gap: var(--space-4); }
+.accept-modal-content h3 { font-size: var(--fs-lg); }
+.accept-details { display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--fs-sm); color: var(--gray-600); }
+.accept-actions { display: flex; justify-content: flex-end; gap: var(--space-3); margin-top: var(--space-4); }

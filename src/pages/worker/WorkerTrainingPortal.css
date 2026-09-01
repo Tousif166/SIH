@@ -1,0 +1,51 @@
+.training-page { max-width: 1100px; }
+.training-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-6); flex-wrap: wrap; gap: var(--space-4); }
+.training-header h1 { font-size: var(--fs-2xl); margin: 0 0 var(--space-1); }
+.training-internship-badge {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+  color: white; border-radius: var(--radius-full); font-size: var(--fs-sm); font-weight: var(--fw-semibold);
+}
+.training-stats { display: flex; gap: var(--space-4); margin-bottom: var(--space-6); }
+.training-stat { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5); display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.training-stat-val { font-size: var(--fs-2xl); font-weight: var(--fw-bold); color: var(--primary-700); }
+.training-stat span:last-child { font-size: var(--fs-xs); color: var(--gray-500); }
+
+.training-filters { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-6); }
+.training-filter-btn { padding: var(--space-2) var(--space-4); border: 2px solid var(--gray-200); border-radius: var(--radius-full); background: white; font-size: var(--fs-sm); color: var(--gray-600); cursor: pointer; transition: all var(--transition-fast); }
+.training-filter-btn:hover { border-color: var(--gray-400); }
+.training-filter-btn.active { border-color: var(--primary-500); color: var(--primary-700); background: var(--primary-50); }
+
+.training-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-bottom: var(--space-8); }
+.training-card { padding: var(--space-5); border-left: 4px solid transparent; transition: all var(--transition-fast); }
+.training-card.enrolled { border-left-color: var(--primary-500); }
+.training-card:hover { transform: translateY(-2px); }
+.training-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-3); }
+.training-icon { width: 48px; height: 48px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; }
+.training-card-badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.training-card-title { font-size: var(--fs-base); font-weight: var(--fw-semibold); color: var(--gray-800); margin: 0 0 4px; }
+.training-card-hindi { font-size: var(--fs-xs); margin-bottom: var(--space-3); }
+
+.training-meta { display: flex; flex-direction: column; gap: 4px; margin-bottom: var(--space-4); }
+.training-meta span { display: flex; align-items: center; gap: 6px; font-size: var(--fs-xs); color: var(--gray-500); }
+
+.training-progress-wrap { margin-bottom: var(--space-3); }
+.training-progress-bar { height: 6px; background: var(--gray-100); border-radius: var(--radius-full); overflow: hidden; margin-bottom: 4px; }
+.training-progress-fill { height: 100%; border-radius: var(--radius-full); transition: width 0.8s ease-out; }
+.training-progress-wrap span { font-size: var(--fs-xs); color: var(--gray-500); }
+
+.training-cert-earned { display: flex; align-items: center; gap: 6px; font-size: var(--fs-xs); color: var(--success-700); background: var(--success-50); padding: var(--space-2); border-radius: var(--radius-sm); margin-bottom: var(--space-3); }
+.training-card-actions { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+
+/* Seva Kendras */
+.training-kendras { margin-top: var(--space-6); }
+.training-kendras h2 { font-size: var(--fs-xl); margin-bottom: var(--space-1); }
+.training-kendras > p { margin-bottom: var(--space-4); }
+.kendra-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+.kendra-card { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-4); }
+.kendra-city { font-size: var(--fs-base); font-weight: var(--fw-bold); color: var(--primary-700); margin-bottom: var(--space-2); }
+.kendra-address, .kendra-phone, .kendra-hours { display: flex; align-items: center; gap: 6px; font-size: var(--fs-xs); color: var(--gray-600); margin-bottom: 4px; }
+
+@media (max-width: 900px) { .training-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .training-grid, .kendra-grid { grid-template-columns: 1fr; } .training-stats { flex-wrap: wrap; } }

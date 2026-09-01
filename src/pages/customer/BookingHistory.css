@@ -1,0 +1,84 @@
+.history-page { max-width: 700px; }
+.history-page h1 { margin-bottom: var(--space-2); }
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.history-card { padding: var(--space-6); }
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-3);
+}
+
+.history-header h3 { font-size: var(--fs-lg); }
+
+.history-details {
+  display: flex;
+  gap: var(--space-4);
+  color: var(--gray-500);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-3);
+}
+
+.history-details span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.history-desc {
+  font-size: var(--fs-sm);
+  color: var(--gray-600);
+  padding: var(--space-3);
+  background: var(--gray-50);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+
+.history-worker {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-3);
+}
+
+.history-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--gray-100);
+}
+
+.history-price {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+
+.weather-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--warning-600);
+  background: var(--warning-50);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.history-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}

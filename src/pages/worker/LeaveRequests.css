@@ -1,0 +1,37 @@
+.leave-page { max-width: 650px; }
+
+.leave-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.leave-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.leave-card { padding: var(--space-4) var(--space-6); }
+
+.leave-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.leave-dates {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--gray-700);
+}
+
+.leave-reason {
+  font-size: var(--fs-sm);
+  color: var(--gray-500);
+}

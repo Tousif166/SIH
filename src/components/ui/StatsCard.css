@@ -1,0 +1,105 @@
+.stats-card {
+  background: var(--surface-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+  transition: all var(--transition-base);
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stats-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.stats-card-label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stats-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-icon-primary { background: var(--primary-50); color: var(--primary-600); }
+.stats-icon-success { background: var(--success-50); color: var(--success-600); }
+.stats-icon-warning { background: var(--warning-50); color: var(--warning-600); }
+.stats-icon-danger { background: var(--danger-50); color: var(--danger-600); }
+.stats-icon-info { background: var(--info-50); color: var(--info-600); }
+
+.stats-card-value {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--gray-900);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+  animation: countUp 0.6s ease-out;
+}
+
+.stats-card-trend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.trend-up { color: var(--success-600); }
+.trend-down { color: var(--danger-600); }
+
+.trend-label {
+  color: var(--gray-400);
+  font-weight: var(--fw-normal);
+}
+
+@media (max-width: 640px) {
+  .stats-card {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  .stats-card-header {
+    margin-bottom: var(--space-2);
+  }
+
+  .stats-card-label {
+    font-size: 11px;
+    letter-spacing: 0.03em;
+  }
+
+  .stats-card-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .stats-card-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .stats-card-value {
+    font-size: var(--fs-xl);
+    margin-bottom: var(--space-1);
+  }
+
+  .stats-card-trend {
+    font-size: 11px;
+    gap: 4px;
+  }
+}

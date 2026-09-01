@@ -1,0 +1,40 @@
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  color: var(--gray-300);
+  transition: all var(--transition-fast);
+  padding: 0;
+  display: flex;
+}
+
+.star-filled {
+  color: var(--accent-400);
+}
+
+.star-interactive {
+  cursor: pointer;
+}
+
+.star-interactive:hover {
+  transform: scale(1.2);
+}
+
+.star-empty {
+  color: var(--gray-300);
+}
+
+.star:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.star-value {
+  margin-left: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--gray-700);
+}

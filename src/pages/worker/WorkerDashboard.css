@@ -1,0 +1,193 @@
+.worker-dashboard { max-width: 1000px; }
+
+
+/* Availability Toggle */
+.availability-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-8);
+  transition: all var(--transition-base);
+}
+
+.availability-toggle.available {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+}
+
+.availability-toggle.unavailable {
+  background: var(--gray-200);
+  color: var(--gray-600);
+}
+
+.avail-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.avail-content h3 { color: inherit; font-size: var(--fs-lg); }
+.avail-content p { opacity: 0.8; font-size: var(--fs-sm); }
+
+.toggle-switch {
+  width: 56px;
+  height: 30px;
+  border-radius: 15px;
+  position: relative;
+  transition: background var(--transition-base);
+  flex-shrink: 0;
+}
+
+.toggle-switch.on { background: rgba(255,255,255,0.3); }
+.toggle-switch.off { background: var(--gray-400); }
+
+.toggle-knob {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 3px;
+  transition: left var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.toggle-switch.on .toggle-knob { left: 29px; }
+.toggle-switch.off .toggle-knob { left: 3px; }
+
+/* Active Job */
+.active-job-card {
+  border-left: 4px solid var(--accent-500);
+}
+
+.active-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.active-job-card h3 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-2);
+}
+
+.active-job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--gray-500);
+}
+
+/* Recent Jobs */
+.recent-jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.recent-job-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-6);
+}
+
+.recent-job-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.section-title {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .availability-toggle {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .avail-content { flex-direction: column; }
+}
+
+/* Helpline FAB Button */
+.helpline-fab-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  color: white; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition-fast);
+}
+.helpline-fab-btn:hover { background: rgba(255,255,255,0.4); }
+
+/* Welfare Cards Grid */
+.worker-welfare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+.welfare-card {
+  display: flex; gap: var(--space-3); align-items: flex-start; padding: var(--space-4);
+}
+.welfare-card.welfare-warn { border: 1px solid var(--warning-300); background: var(--warning-50) !important; }
+.welfare-icon {
+  width: 40px; height: 40px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.welfare-icon.primary { background: var(--primary-100); color: var(--primary-700); }
+.welfare-icon.success { background: var(--success-100); color: var(--success-700); }
+.welfare-icon.warning { background: var(--warning-100); color: var(--warning-700); }
+.welfare-icon.danger { background: var(--danger-100); color: var(--danger-700); }
+.welfare-info { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.welfare-label { font-size: var(--fs-xs); font-weight: var(--fw-semibold); color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; }
+.welfare-value { font-size: var(--fs-xl); font-weight: var(--fw-bold); color: var(--gray-900); }
+.welfare-value small { font-size: var(--fs-xs); color: var(--gray-400); font-weight: normal; }
+.welfare-bar { height: 6px; background: var(--gray-100); border-radius: var(--radius-full); overflow: hidden; }
+.welfare-bar-fill { height: 100%; border-radius: var(--radius-full); transition: width 1s ease-out; }
+.welfare-sub { font-size: var(--fs-xs); color: var(--gray-500); }
+.welfare-link { background: none; border: none; cursor: pointer; color: var(--primary-600); font-size: var(--fs-xs); font-weight: var(--fw-medium); padding: 0; }
+
+/* Loyalty Badge */
+.loyalty-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white; padding: 3px 8px; border-radius: var(--radius-full);
+  font-size: 10px; font-weight: var(--fw-bold); margin-top: 4px;
+}
+
+/* City Tier Banner */
+.city-tier-banner {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--primary-50); border: 1px solid var(--primary-200);
+  border-radius: var(--radius-lg); font-size: var(--fs-sm); color: var(--primary-800);
+}
+
+/* Training CTA */
+.training-cta-card {
+  display: flex; align-items: center; gap: var(--space-4) !important;
+  background: linear-gradient(135deg, #1e1b4b, #312e81) !important;
+  color: white !important; transition: transform var(--transition-fast) !important;
+}
+.training-cta-card:hover { transform: translateY(-2px); }
+.training-cta-card h4 { color: white; margin: 0; }
+.training-cta-card p { opacity: 0.8; }
+.training-cta-card > div { flex: 1; }
+
+@media (max-width: 600px) {
+  .worker-welfare-grid { grid-template-columns: 1fr; }
+  .city-tier-banner { flex-direction: column; text-align: center; }
+  .training-cta-card { flex-direction: column; text-align: center; }
+  .recent-job-item { flex-direction: column; gap: var(--space-3); align-items: flex-start; }
+  .recent-job-right { width: 100%; justify-content: space-between; }
+  .active-job-header { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+}
+

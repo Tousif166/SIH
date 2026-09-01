@@ -1,0 +1,112 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.input-label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--gray-700);
+}
+
+.input-required {
+  color: var(--danger-500);
+  margin-left: 2px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-base);
+  color: var(--gray-900);
+  background: var(--surface-white);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: var(--gray-400);
+}
+
+.input-field:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.input-field.has-icon-left {
+  padding-left: 42px;
+}
+
+.input-field.has-icon-right {
+  padding-right: 42px;
+}
+
+.input-icon-left {
+  position: absolute;
+  left: 12px;
+  color: var(--gray-400);
+  display: flex;
+  z-index: 1;
+}
+
+.input-mic-btn {
+  position: absolute;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  color: var(--primary-600);
+  background: var(--primary-50);
+  transition: all var(--transition-fast);
+  z-index: 1;
+}
+
+.input-mic-btn:hover {
+  background: var(--primary-100);
+  color: var(--primary-700);
+  transform: scale(1.1);
+}
+
+.input-mic-btn:active {
+  background: var(--danger-50);
+  color: var(--danger-600);
+}
+
+.textarea-field {
+  resize: vertical;
+  min-height: 100px;
+  line-height: var(--lh-relaxed);
+}
+
+.textarea-mic {
+  top: 8px;
+  right: 8px;
+  position: absolute;
+}
+
+/* Error state */
+.input-error .input-field {
+  border-color: var(--danger-500);
+}
+
+.input-error .input-field:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.input-error-text {
+  font-size: var(--fs-xs);
+  color: var(--danger-600);
+  font-weight: var(--fw-medium);
+}

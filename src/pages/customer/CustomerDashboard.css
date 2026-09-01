@@ -1,0 +1,250 @@
+.dashboard { max-width: 900px; }
+
+.welcome-banner {
+  background: linear-gradient(135deg, var(--primary-600), #7c3aed);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-8);
+}
+
+.welcome-banner h1 {
+  font-size: var(--fs-2xl);
+  color: white;
+  margin-bottom: var(--space-2);
+}
+
+.welcome-banner p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--fs-md);
+}
+
+.active-booking-alert {
+  margin-bottom: var(--space-6);
+  border-left: 4px solid var(--primary-500);
+}
+
+.alert-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.alert-pulse {
+  width: 12px;
+  height: 12px;
+  background: var(--primary-500);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.alert-content h4 { font-size: var(--fs-sm); color: var(--primary-700); }
+.alert-content p { font-size: var(--fs-sm); color: var(--gray-600); margin-top: 2px; }
+.alert-content .btn { margin-left: auto; flex-shrink: 0; }
+
+.section { margin-bottom: var(--space-8); }
+
+.section-title {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-4);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+/* Service Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+  transition: transform var(--transition-base);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+}
+
+.service-name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--gray-800);
+  margin-bottom: var(--space-1);
+}
+
+.service-price {
+  font-size: var(--fs-xs);
+  color: var(--gray-500);
+}
+
+/* Bookings List */
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.booking-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.booking-item:hover {
+  border-color: var(--primary-200);
+}
+
+.booking-item h4 {
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-1);
+}
+
+.booking-meta {
+  display: flex;
+  gap: var(--space-4);
+  color: var(--gray-500);
+  font-size: var(--fs-xs);
+}
+
+.booking-meta span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.booking-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+
+.booking-price {
+  font-weight: var(--fw-bold);
+  color: var(--gray-900);
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--space-10);
+  color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+  .welcome-banner {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+    padding: var(--space-6);
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .booking-item-right {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Helpline widget button */
+.helpline-widget-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.2); color: white;
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition-fast);
+}
+.helpline-widget-btn:hover { background: rgba(255,255,255,0.35); }
+
+/* Maintenance Reminders */
+.maintenance-reminders {
+  background: white; border: 1.5px solid var(--warning-200);
+  border-radius: var(--radius-xl); overflow: hidden;
+  margin-bottom: var(--space-6);
+}
+.reminders-header {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  background: var(--warning-50); border-bottom: 1px solid var(--warning-100);
+  color: var(--warning-800);
+}
+.reminders-header h3 { margin: 0; font-size: var(--fs-sm); flex: 1; }
+.reminders-list { display: flex; flex-direction: column; }
+.reminder-item {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--gray-50);
+  transition: background var(--transition-fast);
+}
+.reminder-item:last-child { border-bottom: none; }
+.reminder-item:hover { background: var(--gray-50); }
+.reminder-item.urgent { background: var(--danger-50); }
+.reminder-icon { font-size: 1.4rem; flex-shrink: 0; }
+.reminder-info { flex: 1; }
+.reminder-info strong { font-size: var(--fs-sm); display: block; }
+.reminder-actions { display: flex; align-items: center; gap: var(--space-2); }
+.reminder-dismiss {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1px solid var(--gray-200); background: white;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--gray-400);
+  transition: all var(--transition-fast);
+}
+.reminder-dismiss:hover { background: var(--danger-50); color: var(--danger-500); border-color: var(--danger-200); }
+
+/* Section header */
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-4); }
+.see-all-btn { font-size: var(--fs-sm); color: var(--primary-600); background: none; border: none; cursor: pointer; font-weight: var(--fw-medium); }
+
+/* Live track button */
+.track-live-btn {
+  padding: 4px 10px; border-radius: var(--radius-full);
+  border: 1px solid var(--primary-200); background: var(--primary-50);
+  color: var(--primary-700); font-size: var(--fs-xs); font-weight: var(--fw-medium);
+  cursor: pointer; white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+.track-live-btn:hover { background: var(--primary-100); }
+
+@media (max-width: 480px) {
+  .reminder-item { flex-wrap: wrap; }
+  .reminder-actions { width: 100%; justify-content: flex-end; }
+}
+

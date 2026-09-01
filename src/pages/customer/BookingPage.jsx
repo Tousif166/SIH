@@ -57,12 +57,13 @@ function calcBilling(basePrice, weatherMultiplier, isRuralOrDistant = false) {
 export default function BookingPage() {
   const [searchParams] = useSearchParams();
   const preselected = searchParams.get('service');
+  const preselectedDesc = searchParams.get('desc');
   const navigate = useNavigate();
   const { user, profile } = useAuth();
 
   const [step, setStep] = useState(preselected ? 2 : 1);
   const [selectedService, setSelectedService] = useState(preselected || 'plumbing');
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState(preselectedDesc ? `${preselectedDesc} (Scheduled Maintenance)` : '');
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
   const [time, setTime] = useState('10:00 AM');
   const [address, setAddress] = useState(profile?.address || '12, Sector 45, Gurugram, Haryana');
@@ -79,8 +80,11 @@ export default function BookingPage() {
     if (preselected) {
       setSelectedService(preselected);
       setStep(2);
+      if (preselectedDesc) {
+        setDescription(`${preselectedDesc} (Scheduled Maintenance)`);
+      }
     }
-  }, [preselected]);
+  }, [preselected, preselectedDesc]);
 
   const service = mockServices.find(s => s.id === selectedService) || mockServices[0];
   const weatherMultiplier = service ? (currentWeather.multiplier * (service.weatherMultiplier || 1)) : 1;

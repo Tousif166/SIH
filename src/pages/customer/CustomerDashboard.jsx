@@ -23,9 +23,9 @@ const statusColors = {
 
 // Maintenance reminder data (in real app comes from Supabase)
 const MOCK_REMINDERS = [
-  { id: 1, service_name: 'AC Filter Cleaning', next_due_date: '2026-09-05', interval_days: 90, icon: '❄️' },
-  { id: 2, service_name: 'RO Water Purifier Service', next_due_date: '2026-09-12', interval_days: 60, icon: '💧' },
-  { id: 3, service_name: 'Chimney Cleaning', next_due_date: '2026-09-20', interval_days: 45, icon: '🔥' },
+  { id: 1, service_id: 'ac-repair', service_name: 'AC Filter Cleaning', next_due_date: '2026-09-05', interval_days: 90, icon: '❄️' },
+  { id: 2, service_id: 'plumbing', service_name: 'RO Water Purifier Service', next_due_date: '2026-09-12', interval_days: 60, icon: '💧' },
+  { id: 3, service_id: 'cleaning', service_name: 'Chimney Deep Cleaning', next_due_date: '2026-09-20', interval_days: 45, icon: '🔥' },
 ];
 
 export default function CustomerDashboard() {
@@ -43,6 +43,10 @@ export default function CustomerDashboard() {
   const daysUntil = (dateStr) => {
     const diff = new Date(dateStr) - new Date();
     return Math.ceil(diff / (1000 * 60 * 60 * 24));
+  };
+
+  const handleBookReminder = (reminder) => {
+    navigate(`/customer/book?service=${reminder.service_id}&desc=${encodeURIComponent(reminder.service_name)}`);
   };
 
   return (
@@ -85,7 +89,7 @@ export default function CustomerDashboard() {
                     </p>
                   </div>
                   <div className="reminder-actions">
-                    <Button variant="primary" size="sm" onClick={() => navigate('/customer/book')}>Book Now</Button>
+                    <Button variant="primary" size="sm" onClick={() => handleBookReminder(r)}>Book Now</Button>
                     <button className="reminder-dismiss" onClick={() => dismissReminder(r.id)}><X size={14} /></button>
                   </div>
                 </div>
